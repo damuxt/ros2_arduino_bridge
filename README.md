@@ -10,7 +10,7 @@
 
 ### 使用准备
 
-##### 1.硬件准备
+#### 1.硬件准备
 
 通过USB数据线将机器人底盘连接到上位机，并打开底盘开关。上位机终端下执行指令：
 
@@ -24,7 +24,7 @@ ll /dev/ttyACM*
 crw-rw---- 1 root dialout 166, 0  4月 27 20:15 /dev/ttyACM0
 ```
 
-##### 2.系统准备
+#### 2.系统准备
 
 ros2_arduino_bridge是依赖于python-serial功能包的，请先在上位机安装该功能包，安装命令:
 
@@ -32,11 +32,11 @@ ros2_arduino_bridge是依赖于python-serial功能包的，请先在上位机安
 sudo pip install --upgrade pyserial
 ```
 
-##### 3.软件安装
+#### 3.软件安装
 
 将此软件包下载到你的ROS2工作空间下的src目录。
 
-##### 4.环境配置
+#### 4.环境配置
 
 终端下进入`ros2_arduino_bridge/scripts`,并执行指令：
 
@@ -57,7 +57,7 @@ lrwxrwxrwx   1 root root           7  4月 27 20:16 myarduino -> ttyACM0
 crwxrwxrwx   1 root dialout 166,   0  4月 27 20:16 ttyACM0
 ```
 
-##### 5.构建功能包
+#### 5.构建功能包
 
 工作空间下调用如下指令，构建功能包：
 

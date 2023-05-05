@@ -24,6 +24,8 @@ ll /dev/ttyACM*
 crw-rw---- 1 root dialout 166, 0  4月 27 20:15 /dev/ttyACM0
 ```
 
+PS：如果物理连接无异常，Ubuntu系统显示`无法访问 ‘/dev/ttyACM‘: 没有那个文件或目录`，那么可能是brltty驱动占用导致的，可以运行`sudo apt remove brltty `然后重新插拔一下设备即可解决问题。
+
 #### 2.系统准备
 
 ros2_arduino_bridge是依赖于python-serial功能包的，请先在上位机安装该功能包，安装命令:

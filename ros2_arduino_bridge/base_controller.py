@@ -14,6 +14,7 @@ class BaseController:
         self.arduino = node.arduino
         self.name = name
         self.base_frame = node.get_parameter("base_frame").value
+        self.odom_frame = node.get_parameter("odom_frame").value
         self.rate = float(node.get_parameter("base_controller_rate").value)
         self.timeout = node.get_parameter("base_controller_timeout").value
         self.stopped = False
@@ -153,7 +154,7 @@ class BaseController:
             t = TransformStamped()
 
             t.header.stamp = now.to_msg()
-            t.header.frame_id = 'odom'
+            t.header.frame_id = self.odom_frame
             t.child_frame_id = self.base_frame
 
             t.transform.translation.x = self.x
@@ -168,7 +169,7 @@ class BaseController:
             self.odomBroadcaster.sendTransform(t)
     
             odom = Odometry()
-            odom.header.frame_id = "odom"
+            odom.header.frame_id = self.odom_frame
             odom.child_frame_id = self.base_frame
             odom.header.stamp = now.to_msg()
             odom.pose.pose.position.x = self.x

@@ -15,6 +15,7 @@ class MyNode(Node):
         self.motors_reversed = self.declare_parameter("motors_reversed",False)
         self.rate = self.declare_parameter("rate",50)
 
+        self.declare_parameter("odom_frame","odom")
         self.declare_parameter("base_controller_rate",10)
         self.declare_parameter("base_controller_timeout",1.0)
         self.declare_parameter("wheel_diameter",0.065)

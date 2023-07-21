@@ -8,11 +8,12 @@
     base_controller_rate: 10
     base_controller_timeout: 1.0
     base_frame: base_footprint
+    odom_frame: odom
     baud: 57600
     encoder_resolution: 3960
     gear_reduction: 1
     motors_reversed: false
-    port: /dev/ttyACM0
+    port: /dev/myarduino
     rate: 50
     timeout: 0.5
     use_sim_time: false

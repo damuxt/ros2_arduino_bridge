@@ -1,0 +1,2 @@
+KERNEL=="ttyACM*", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="0042", MODE:="0777", SYMLINK+="myarduino"
+
